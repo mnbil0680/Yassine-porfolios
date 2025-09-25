@@ -1,0 +1,55 @@
+---
+// Reusable video player with robust fallback and error handling.
+interface Props {
+  src: string; // path to mp4 video (public path)
+  poster?: string; // poster image URL
+  title?: string; // accessible title / aria-label
+  download?: boolean; // show download link
+  width?: string; // css width (default 100%)
+  maxWidth?: string; // css max-width (default 800px)
+  aspectRatio?: string; // optional aspect-ratio (e.g., 16/9)
+}
+const {
+  src,
+  poster,
+  title = 'Video asset',
+  download = true,
+  width = '100%',
+  maxWidth = '800px',
+  aspectRatio
+} = Astro.props as Props;
+---
+<div class="video-wrapper" style={`width:${width};max-width:${maxWidth};${aspectRatio ? `aspect-ratio:${aspectRatio};` : ''}`} data-video-wrapper>
+  <video
+    src={src}
+    { ...(poster ? { poster } : {}) }
+    controls
+    playsinline
+    preload="metadata"
+    aria-label={title}
+    style="background:#000;display:block;width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);"
+    data-video
+  ></video>
+  <noscript>
+    <p><a href={src} download>Download video</a></p>
+  </noscript>
+  { download && <p class="download-note"><a href={src} download>Download video</a></p> }
+</div>
+<script>
+  // Attach runtime diagnostics: if video errors, swap to poster + message.
+  document.currentScript?.previousElementSibling?.querySelector?.('[data-video]')?.addEventListener('error', (e) => {
+    const video = e.currentTarget as HTMLVideoElement;
+    const wrapper = video.closest('[data-video-wrapper]');
+    if (!wrapper) return;
+    const msg = document.createElement('div');
+    msg.setAttribute('role', 'alert');
+    msg.style.cssText = 'padding:1rem;background:#111;border:1px solid #333;color:#eee;border-radius:8px;font-size:.9rem;';
+    msg.innerHTML = `Unable to load video. <a href="${video.currentSrc || video.src}" download style="color:#fff;text-decoration:underline;">Download it here</a>.`;
+    video.replaceWith(msg);
+  });
+</script>
+<style>
+.video-wrapper { position:relative; }
+.video-wrapper .download-note { margin:.25rem 0 0; font-size:.75rem; opacity:.7; }
+.video-wrapper .download-note a { text-decoration:underline; }
+</style>
