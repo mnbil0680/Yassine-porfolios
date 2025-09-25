@@ -25,8 +25,11 @@ tags:
   - Brand Content
   - Creative Direction
 ---
-
-export const BASE = import.meta.env.BASE_URL || "/"
+import { Picture } from "astro:assets";
+import { PICTURE_FORMATS } from "@consts";
+import coverImage from "@images/sidiAli/cover.jpg";
+import photo1Image from "@images/sidiAli/1.jpg";
+import photo2Image from "@images/sidiAli/2.jpg";
 
 ## Project Overview
 
@@ -80,16 +83,16 @@ Video content requires seamless integration of cinematography, editing, and post
 
 | Media Type | Project | Description |
 |------------|---------|-------------|
-| **Cover Photography** | ![SIDI Ali Cover](@images/sidiAli/cover.jpg) | **Primary Portfolio Cover** - Professional photography showcasing technical excellence and artistic vision in commercial portrait work |
-| **Portrait Photography** | ![Photography Sample 1](@images/sidiAli/1.jpg) | **Professional Portrait A** - Demonstrates mastery of lighting, composition, and post-processing techniques in professional portrait photography |
-| **Lifestyle Photography** | ![Photography Sample 2](@images/sidiAli/2.jpg) | **Lifestyle Documentation B** - Captures authentic moments with natural composition and professional technical execution |
+| **Cover Photography** | <Picture src={coverImage} alt="SIDI Ali Cover" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Primary Portfolio Cover** - Professional photography showcasing technical excellence and artistic vision in commercial portrait work |
+| **Portrait Photography** | <Picture src={photo1Image} alt="Photography Sample 1" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Professional Portrait A** - Demonstrates mastery of lighting, composition, and post-processing techniques in professional portrait photography |
+| **Lifestyle Photography** | <Picture src={photo2Image} alt="Photography Sample 2" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Lifestyle Documentation B** - Captures authentic moments with natural composition and professional technical execution |
 
 ### Video Production Showcase
 
 **Featured Video Production:**
 
-<video controls width="100%" style={{maxWidth: '800px', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', margin: '20px 0'}}>
-  <source src={`${BASE}videos/sidiAli/video.mp4`} type="video/mp4" />
+<video controls width="100%" style={{maxWidth: '800px', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', margin: '20px 0'}} poster={coverImage.src}>
+  <source src="/videos/sidiAli/video.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
