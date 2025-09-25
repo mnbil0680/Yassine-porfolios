@@ -24,6 +24,17 @@ tags:
   - Visual Storytelling
 ---
 
+import { Picture } from "astro:assets"
+import { PICTURE_FORMATS } from "@consts"
+import frontImage from "@images/ola/front.jpg"
+import kvCopyImage from "@images/ola/KVcopy.jpg"
+import dscfImage from "@images/ola/DSCF5988.jpg"
+import new4x2Image from "@images/ola/new4x2.jpg"
+import optimumImage from "@images/ola/Optimum4x2.jpg"
+import eidImage from "@images/ola/OLAPOSTEID.jpg"
+import mimousaImage from "@images/ola/POSTOLAMIMOUSA.jpg"
+import rImage from "@images/ola/R.jpg"
+
 ## Overview
 
 I provided comprehensive creative services for **OLA Car Oil Services**, a leading automotive maintenance company specializing in premium car oil products and services. Over an 8-month collaboration, I delivered a complete visual identity transformation covering three key creative disciplines: photography and color editing, videography and montage, and graphic design.
@@ -38,21 +49,21 @@ My role encompassed the full creative pipeline: concept development, content cre
 
 | Project | Description |
 |---------|-------------|
-| ![OLA Service Center](@images/ola/front.jpg) | **Service Center Visual Identity** - Front facade design showcasing OLA's premium automotive service branding and professional environment setup |
-| ![OLA Campaign Design](@images/ola/KVcopy.jpg) | **Key Visual Campaign** - Primary marketing visual that became the cornerstone of OLA's brand communication across all platforms |
-| ![OLA Professional Photography](@images/ola/DSCF5988.jpg) | **Professional Service Photography** - Behind-the-scenes documentation capturing the expertise and precision of OLA's automotive service processes |
-| ![OLA Print Design](@images/ola/new4x2.jpg) | **4x2 Format Design** - Versatile marketing material optimized for both digital and print applications, showcasing brand consistency |
-| ![OLA Premium Design](@images/ola/Optimum4x2.jpg) | **Optimum Product Line Design** - Specialized design for OLA's premium Optimum product range, emphasizing quality and performance |
-| ![OLA Eid Campaign](@images/ola/OLAPOSTEID.jpg) | **Eid Special Campaign** - Cultural celebration design that connected OLA with community values while maintaining brand professionalism |
-| ![OLA Mimousa Campaign](@images/ola/POSTOLAMIMOUSA.jpg) | **Mimousa Promotional Design** - Seasonal campaign design showcasing OLA's community engagement and cultural awareness |
-| ![OLA Brand Element](@images/ola/R.jpg) | **Brand Identity Element** - Core design component that reinforced OLA's visual identity across various applications |
+| <Picture src={frontImage} alt="OLA Service Center" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Service Center Visual Identity** - Front facade design showcasing OLA's premium automotive service branding and professional environment setup |
+| <Picture src={kvCopyImage} alt="OLA Campaign Design" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Key Visual Campaign** - Primary marketing visual that became the cornerstone of OLA's brand communication across all platforms |
+| <Picture src={dscfImage} alt="OLA Professional Photography" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Professional Service Photography** - Behind-the-scenes documentation capturing the expertise and precision of OLA's automotive service processes |
+| <Picture src={new4x2Image} alt="OLA Print Design" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **4x2 Format Design** - Versatile marketing material optimized for both digital and print applications, showcasing brand consistency |
+| <Picture src={optimumImage} alt="OLA Premium Design" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Optimum Product Line Design** - Specialized design for OLA's premium Optimum product range, emphasizing quality and performance |
+| <Picture src={eidImage} alt="OLA Eid Campaign" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Eid Special Campaign** - Cultural celebration design that connected OLA with community values while maintaining brand professionalism |
+| <Picture src={mimousaImage} alt="OLA Mimousa Campaign" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Mimousa Promotional Design** - Seasonal campaign design showcasing OLA's community engagement and cultural awareness |
+| <Picture src={rImage} alt="OLA Brand Element" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | **Brand Identity Element** - Core design component that reinforced OLA's visual identity across various applications |
 
 ### Video Production Showcase
 
 **Featured Video Asset:**
 
 <video controls width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-  <source src="/videos/ola/CARBURANT-OPTIMIUM.mp4" type="video/mp4">
+  <source src="/videos/ola/CARBURANT-OPTIMIUM.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
