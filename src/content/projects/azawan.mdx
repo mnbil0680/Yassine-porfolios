@@ -8,6 +8,11 @@ image:
   alt: Radio Azawan brand identity design
 ---
 
+import { Picture } from "astro:assets"
+import { PICTURE_FORMATS } from "@consts"
+import azawanPrimary from "@images/azawan/AZAWAN.jpg"
+import azawanSecondary from "@images/azawan/AZAWAN2.jpg"
+
 Radio Azawan represents a comprehensive brand identity project for a contemporary radio station. This project involved creating a distinctive visual identity that captures the essence of modern broadcasting while maintaining cultural authenticity.
 
 The design approach focused on creating a versatile brand system that works across various media platforms and applications. _Key design objectives:_
@@ -20,5 +25,5 @@ The design approach focused on creating a versatile brand system that works acro
 
 | Image | Description |
 |-------|-------------|
-| ![Radio Azawan Primary Design](@images/azawan/AZAWAN.jpg) | Main brand identity design featuring the primary logo and visual elements |
-| ![Radio Azawan Secondary Design](@images/azawan/AZAWAN2.jpg) | Secondary design applications showcasing brand versatility and adaptability |
+| <Picture src={azawanPrimary} alt="Radio Azawan Primary Design" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | Main brand identity design featuring the primary logo and visual elements |
+| <Picture src={azawanSecondary} alt="Radio Azawan Secondary Design" formats={PICTURE_FORMATS} class:list={["img-thumbnail"]} decoding="async" loading="lazy" /> | Secondary design applications showcasing brand versatility and adaptability |
