@@ -21,7 +21,6 @@ const {
 ---
 <div class="video-wrapper" style={`width:${width};max-width:${maxWidth};${aspectRatio ? `aspect-ratio:${aspectRatio};` : ''}`} data-video-wrapper>
   <video
-    src={src}
     { ...(poster ? { poster } : {}) }
     controls
     playsinline
@@ -29,7 +28,10 @@ const {
     aria-label={title}
     style="background:#000;display:block;width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);"
     data-video
-  ></video>
+  >
+    <source src={src} type="video/mp4" />
+    <p>Your browser does not support this video format.</p>
+  </video>
   <noscript>
     <p><a href={src} download>Download video</a></p>
   </noscript>
